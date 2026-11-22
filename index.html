@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="stage">
+
+<section class="slide cover" data-enter="cover" data-title="Linux" data-notes="بسم الله. موضوع العرض هو نظام Linux. سنتعرف على مكونات أنظمة التشغيل، ثم النواة Kernel، ثم قصة لينوس تورفالدز ومشروع GNU وكيف اجتمعا، ثم ميزات النظام واستخداماته من السيرفرات إلى أندرويد إلى المريخ.">
+  <canvas id="rain"></canvas>
+  <div class="cover-grid"></div>
+  <div class="cover-text">
+    <div class="term" id="term"><div class="term-bar"><i></i><i></i><i></i><span>tux@linux: ~</span></div><pre id="termBody"></pre></div>
+    <h1 class="mega"><span class="g">LIN</span><span class="a">UX</span></h1>
+    <p class="sub">أسم الطالب :ستار نزار 
+
+    </p><p class="sub"> A دراسة صباحي
+
+    </p>
+    <p class="tag">OPEN SOURCE · FREE · EVERYWHERE</p>
+  </div>
+</section>
+
+<section class="slide" data-title="Operating System Components" data-notes="مكونات نظام التشغيل خمسة: مشغلات الأجهزة Device Drivers تجعل النظام يتواصل مع الأجهزة الخارجية مثل الماوس. نظام الملفات File System ينظم الملفات. الصدفة Shell تستقبل الأوامر وترسلها للنظام وهي الخاصة بالترمنال. المترجم Compiler يحول الكود المصدري إلى كود قابل للتنفيذ. وواجهة المستخدم User Interface هي طريقة التعامل مع النظام. مرّر الماوس على كل مربع لتظهر وظيفته. وبعدها نصل إلى أهم عنصر: الـ Kernel، وسنشرحه في الشريحة التالية.">
+  <div class="content">
+    <h2>Operating system <span class="g">components</span></h2>
+    <div class="comps">
+      <div class="comp" data-comp><span class="gl">USB</span><h3>Device Drivers</h3><p class="desc" data-t="Let the system communicate with external devices, such as the mouse."></p></div>
+      <div class="comp" data-comp><span class="gl">/</span><h3>File System</h3><p class="desc" data-t="Organizes the files."></p></div>
+      <div class="comp" data-comp><span class="gl">&gt;_</span><h3>Shell</h3><p class="desc" data-t="Receives commands (the terminal) and sends them to the system."></p></div>
+      <div class="comp" data-comp><span class="gl">&lt;/&gt;</span><h3>Compiler</h3><p class="desc" data-t="Converts source code into executable code."></p></div>
+      <div class="comp" data-comp><span class="gl">▢</span><h3>User Interface</h3><p class="desc" data-t="How the user interacts with the system."></p></div>
+    </div>
+    <p class="tease">And the most important component of all… the <b class="kword">kernel</b></p>
+    <small class="clickhint">Hover over a square</small>
+  </div>
+</section>
+
+<section class="slide" data-title="The Kernel" data-notes="الكيرنال في المنتصف، والسوفتوير على يساره، والهاردوير على يمينه. الأوامر تمر من السوفتوير إلى الكيرنال ثم إلى الهاردوير. مرّر الماوس على المخطط لتتحرك المعلومات بين الأجزاء. الكيرنال هو الجسر بين السوفتوير والهاردوير: يستلم الأوامر من السوفتوير ويرسلها للهاردوير ليقوم بالوظيفة المطلوبة.">
+  <div class="content">
+    <h2>The <span class="a">kernel</span></h2>
+    <div class="card kcard"><svg id="kSvg" viewBox="0 0 1000 440" role="img" aria-label="Software, kernel and hardware"></svg></div>
+    <div class="callout kcallout">The kernel is a bridge between software and hardware. It receives commands from the software and sends them to the hardware to perform the requested function.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="Linus Torvalds" data-notes="لينوس تورفالدز: طالب جامعي في 1991 كان عنده حاسوب عادي يستخدم عليه نظام Minix، وبدأ يطور برامج خاصة به. Minix هو البيئة التي كان يعمل عليها، ومن الأشياء التي بدأ يعمل عليها نواة Linux، وهو ما زال طالباً جامعياً. مرّر الماوس على الصورة لتكبر ويظهر اسمه.">
+  <div class="content">
+    <h2>Meet <span class="g">Linus Torvalds</span></h2>
+    <div class="grid2 center-v">
+      <div class="hv photo ar" data-hover="type"><img src="assets/linus.jpg" alt="Linus Torvalds"><div class="names low"><span class="nm" data-t="Linus Torvalds"></span></div></div>
+      <div class="story">
+        <p>In <b class="g">1991</b>, Linus was a university student with an ordinary computer.</p>
+        <p>He used a system called <b class="g">Minix</b>, the environment he worked in, and started developing his own programs.</p>
+        <p>One of the things he began building was the <b class="g">kernel</b> of Linux, while still a student.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="The GNU Project" data-notes="مشروع GNU أنشأه ريتشارد ستالمان. كان يريد نظاماً مثل Unix لكنه مفتوح المصدر، وهذا يعني كتابة كل شيء يخص النظام من الصفر. وبالفعل كتب كل شيء تقريباً، لكنه كان يحتاج شيئاً واحداً لإنهاء النظام: الكيرنال.">
+  <div class="content">
+    <h2>The <span class="g">GNU</span> project</h2>
+    <div class="grid2 center-v">
+      <div class="hv photo ar white" data-hover="type"><img src="assets/gnu.png" alt="GNU logo"><div class="names low"><span class="nm" data-t="GNU · Richard Stallman"></span></div></div>
+      <div class="story">
+        <p>GNU was created by <b class="g">Richard Stallman</b>.</p>
+        <p>He wanted a system just like <b class="g">Unix</b>, but open source.</p>
+        <p>That meant writing everything in the system from scratch. And he did.</p>
+        <p>But one thing was still missing to finish it: the <b class="a">kernel</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="GNU + Linux" data-notes="اتحاد لينوس مع مشروع GNU كوّن Linux الذي نعرفه. وبما أن Linux مفتوح المصدر، بدأ آلاف المطورين بتطويره. في الجهة الجانبية تقرير نشرته جامعة هلسنكي بعنوان How did the 30-year-old Linux conquer the world. مرّر الماوس على بطاقة التقرير ليبدأ العداد، وهو يوضح كيف زاد عدد الأسطر من الصفر إلى أكثر من 3.3 مليون في النسخة 5.14.">
+  <div class="content">
+    <h2>Two projects, <span class="g">one system</span></h2>
+    <div class="grid2 center-v">
+      <div class="left">
+        <div class="hv photo ar white" data-hover="type"><img src="assets/gnu_linux.jpg" alt="GNU/Linux"><div class="names low"><span class="nm" data-t="GNU + Linux"></span></div></div>
+        <div class="story">
+          <p>Linus's kernel joined the GNU project, and together they formed the <b class="g">Linux</b> we know.</p>
+          <p>Because it is open source, thousands of developers started improving it.</p>
+        </div>
+      </div>
+      <div class="card report" data-loc>
+        <div class="rhead">
+          <div class="hv photo ar white tiny" data-hover="type"><img src="assets/helsinki.png" alt="University of Helsinki"><div class="names low"><span class="nm" data-t="University of Helsinki"></span></div></div>
+          <h3>How did the 30-year-old Linux conquer the world?</h3>
+        </div>
+        <blockquote>It was only 65 kilobytes and comprised some 10,000 lines of Torvalds' code.</blockquote>
+        <blockquote>The current Linux 5.14 contains over 3.3 million lines of code.</blockquote>
+        <div class="loc"><span id="locNum">0</span><small>lines of code</small></div>
+        <div class="locbar"><div id="locFill"></div></div><small class="hint2">Hover over the card</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Features: Variety" data-notes="من أهم ميزات Linux التنوع، بسبب أن الكود مفتوح المصدر. تظهر الواجهات داخل صندوق واحد واحدة بعد الأخرى: KDE Plasma وLXQt وCinnamon وDeepin وCOSMIC وHyprland وXfce وGNOME. أما ويندوز فلا يملك إلا واجهة واحدة. مرّر الماوس على أي صورة لتكبر ويظهر اسمها.">
+  <div class="content">
+    <h2>Its power is <span class="g">variety</span></h2>
+    <p class="lead">One of Linux's greatest strengths is diversity, because the code is open source.</p>
+    <div class="vgrid">
+      <div class="gal">
+        <div class="tile hv" style="--d:.9s" data-hover="type"><img src="assets/kde.jpg" alt="KDE Plasma"><span class="nm" data-t="KDE Plasma"></span></div>
+        <div class="tile hv" style="--d:1.5s" data-hover="type"><img src="assets/lxqt.jpg" alt="LXQt"><span class="nm" data-t="LXQt"></span></div>
+        <div class="tile hv" style="--d:2.1s" data-hover="type"><img src="assets/cinnamon.jpg" alt="Cinnamon"><span class="nm" data-t="Cinnamon"></span></div>
+        <div class="tile hv" style="--d:2.7s" data-hover="type"><img src="assets/deepin.jpg" alt="Deepin"><span class="nm" data-t="Deepin"></span></div>
+        <div class="tile hv" style="--d:3.3s" data-hover="type"><img src="assets/cosmic.jpg" alt="COSMIC"><span class="nm" data-t="COSMIC"></span></div>
+        <div class="tile hv" style="--d:3.9s" data-hover="type"><img src="assets/hyprland.jpg" alt="Hyprland"><span class="nm" data-t="Hyprland"></span></div>
+        <div class="tile hv" style="--d:4.5s" data-hover="type"><img src="assets/xfce.jpg" alt="Xfce"><span class="nm" data-t="Xfce"></span></div>
+        <div class="tile hv" style="--d:5.1s" data-hover="type"><img src="assets/gnome.jpg" alt="GNOME"><span class="nm" data-t="GNOME"></span></div>
+      </div>
+      <div class="win-col">
+        <div class="tile win hv" data-hover="type"><img src="assets/windows.jpg" alt="Windows"><span class="nm" data-t="Windows"></span></div>
+        <p class="wtxt">Windows has only this one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Uses: Servers" data-notes="من استخدامات Linux الأساسية السيرفرات. ومن المفارقات العجيبة أن شركة مايكروسوفت تستخدم Linux لتشغيل الكثير من سيرفراتها بدل نظامها الخاص Windows، وهذا يدل على كفاءة Linux في السيرفرات.">
+  <div class="content">
+    <h2>Linux runs the <span class="g">servers</span></h2>
+    <div class="grid2 center-v">
+      <div class="hv photo ar" data-hover="type"><img src="assets/servers.jpg" alt="Servers"><div class="names low"><span class="nm" data-t="Data center servers"></span></div></div>
+      <div class="story">
+        <p>Linux is used on a huge number of servers around the world.</p>
+        <p>A surprising paradox: <b class="a">Microsoft</b> uses Linux to run many of its servers instead of its own system, Windows.</p>
+        <p>This shows how efficient Linux is on servers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Uses: Android" data-notes="نظام أندرويد مبني على نواة Linux، لذلك يعتبر جزئياً مفتوح المصدر. معظم مكوناته مفتوحة المصدر، إلا بعض التطبيقات الخاصة مثل Google Play.">
+  <div class="content">
+    <h2>Android is built on <span class="g">Linux</span></h2>
+    <div class="grid2 center-v">
+      <div class="hv photo ar" data-hover="type"><img src="assets/android_linux.jpg" alt="Android and Linux"><div class="names low"><span class="nm" data-t="Android + Linux"></span></div></div>
+      <div class="story">
+        <p>Android was built on the <b class="g">Linux kernel</b>.</p>
+        <p>That is why Android is considered partly open source: most of its components are open source.</p>
+        <p>Only some private apps are closed, such as <b class="a">Google Play</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Uses: Mars" data-notes="في 2021 أرادت ناسا تجربة: هل تستطيع مروحية الطيران على المريخ؟ فالهواء هناك قليل جداً مقارنة بالأرض، والجاذبية أقل أيضاً. الصدمة أن المروحية تعمل بنظام Linux. وهذا يدل على أن Linux لم يقتصر على الحواسيب أو الهواتف.">
+  <div class="content">
+    <h2>Linux on <span class="g">Mars</span></h2>
+    <div class="grid3 nasa">
+      <div class="hv photo ar" data-hover="type"><img src="assets/nasa.jpg" alt="NASA"><div class="names low"><span class="nm" data-t="NASA"></span></div></div>
+      <div class="hv photo ar" data-hover="type"><img src="assets/ingenuity.jpg" alt="Ingenuity helicopter on Mars"><div class="names low"><span class="nm" data-t="Ingenuity, the Mars helicopter"></span></div></div>
+      <div class="story">
+        <p>In <b class="g">2021</b>, NASA wanted to test whether a helicopter could fly on Mars, where the air is very thin and gravity is lower than on Earth.</p>
+        <p>The shock: it runs on <b class="a">Linux</b>.</p>
+      </div>
+    </div>
+    <div class="callout">Linux is not limited to computers or phones anymore.</div>
+  </div>
+</section>
+
+</main>
+
+<aside class="notes" id="notes"><h4 id="notesTitle"></h4><p id="notesBody"></p><small>Press N or Esc to close</small></aside>
+
+<footer class="bar">
+  <div class="progress"><div id="progressFill"></div></div>
+  <div class="bar-row">
+    <div class="meta"><span id="counter">01 / 10</span><span id="slideTitle"></span></div>
+    <div class="controls"><button id="prevBtn">◀ Prev</button><button id="notesBtn">Notes</button><button id="nextBtn">Next ▶</button><button id="fsBtn">Full Screen</button></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
